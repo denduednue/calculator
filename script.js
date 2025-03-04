@@ -14,12 +14,12 @@ buttons.forEach(button => {
 function checkOrder() {
     if (userOrder.length > secretOrder.length) {
         userOrder = [];
-        alert("2");
+        alert("");
     } else {
         for (let i = 0; i < userOrder.length; i++) {
             if (userOrder[i] !== secretOrder[i]) {
                 userOrder = [];
-                alert("Wrong order! Start over.");
+                alert("2");
                 return;
             }
         }
