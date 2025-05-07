@@ -1,12 +1,25 @@
-.button{
-    background-color: #3f1d31; /* Green */
-    border: black;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2; /* Light gray background */
+            font-family: Arial, sans-serif; /* Font style */
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: white; /* Text color */
+            background-color: #70777d; /* Button color */
+            border: none; /* Remove border */
+            border-radius: 10px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth color transition */
+        }
+        button:hover {
+            background-color: #8f9ba8; /* Darker color on hover */
+        }
+        button:focus {
+            outline: none; /* Remove outline on focus */
+        }
