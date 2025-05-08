@@ -1,25 +1,39 @@
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f2f2f2; /* Light gray background */
-            font-family: Arial, sans-serif; /* Font style */
-        }
-        button {
-            padding: 15px 30px;
-            font-size: 16px;
-            color: white; /* Text color */
-            background-color: #70777d; /* Button color */
-            border: none; /* Remove border */
-            border-radius: 10px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s; /* Smooth color transition */
-        }
-        button:hover {
-            background-color: #8f9ba8; /* Darker color on hover */
-        }
-        button:focus {
-            outline: none; /* Remove outline on focus */
-        }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #70777d;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin: 10px; /* spacing between buttons */
+}
+
+button:hover {
+    background-color: #8f9ba8;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    background-color: #5c636a; /* Even darker when actively pressed */
+    transform: scale(0.97); /* Subtle press-down effect */
+}
+
+/* Optional: feedback after a button has been pressed */
+button.pressed {
+    background-color: #4caf50 !important; /* Green to indicate it's part of the correct sequence */
+}
