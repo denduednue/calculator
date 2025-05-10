@@ -1,22 +1,39 @@
-let sequence = [];
-const correctSequence = ['1', '2', '3', '4'];
+let clickOrder = 0;
 
-function checkSequence(value) {
-    sequence.push(value);
-
-    // Keep only the latest 4 entries
-    if (sequence.length > 4) {
-        sequence.shift();
-    }
-
-    if (sequence.join('') === correctSequence.join('')) {
-        const win = window.open('about:blank', '_blank');
-        win.location.href = 'https://www.google.com';
-        sequence = []; // reset after success
-    }
+function openGoogle() {
+    window.open('https://www.google.com', '_blank');
 }
 
-document.getElementById('btn1').addEventListener('click', () => checkSequence('1'));
-document.getElementById('btn2').addEventListener('click', () => checkSequence('2'));
-document.getElementById('btn3').addEventListener('click', () => checkSequence('3'));
-document.getElementById('btn4').addEventListener('click', () => checkSequence('4'));
+document.getElementById('btn1').addEventListener('click', function() {
+    if (clickOrder === 0) {
+        clickOrder++;
+    }
+    checkSequence();
+});
+
+document.getElementById('btn2').addEventListener('click', function() {
+    if (clickOrder === 1) {
+        clickOrder++;
+    }
+    checkSequence();
+});
+
+document.getElementById('btn3').addEventListener('click', function() {
+    if (clickOrder === 2) {
+        clickOrder++;
+    }
+    checkSequence();
+});
+
+document.getElementById('btn4').addEventListener('click', function() {
+    if (clickOrder === 3) {
+        clickOrder++;
+    }
+    checkSequence();
+});
+
+function checkSequence() {
+    if (clickOrder === 4) {
+        openGoogle();
+    }
+}
