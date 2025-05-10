@@ -2,6 +2,7 @@ let clickOrder = 0;
 
 function openGoogle() {
     window.open('https://www.google.com', '_blank');
+    clickOrder = 0; // Reset the order after completing the sequence
 }
 
 document.getElementById('btn1').addEventListener('click', function() {
