@@ -1,7 +1,7 @@
 let clickOrder = 0;
 
 function openGoogle() {
-    window.open('https://www.google.com', '_blank');
+    window.open('/home.html', '_blank');
     clickOrder = 0; // Reset the order after completing the sequence
 }
 
