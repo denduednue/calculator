@@ -1,27 +1,22 @@
-const secretOrder = [1, 2, 3, 4];
-let userOrder = [];
+let sequence = [];
+const correctSequence = ['1', '2', '3', '4'];
 
-const buttons = document.querySelectorAll('.secret-button');
+function checkSequence(value) {
+    sequence.push(value);
 
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const order = parseInt(button.getAttribute('data-order'), 10);
-        userOrder.push(order);
-        checkOrder();
-    });
-});
-
-function checkOrder() {
-    for (let i = 0; i < userOrder.length; i++) {
-        if (userOrder[i] !== secretOrder[i]) {
-            alert("Wrong order! Start over.");
-            userOrder = [];
-            return;
-        }
+    // Keep only the latest 4 entries
+    if (sequence.length > 4) {
+        sequence.shift();
     }
 
-    if (userOrder.length === secretOrder.length) {
-        alert("Congratulations! You've clicked the buttons in the correct order!");
-        userOrder = []; // Reset for a new attempt
+    if (sequence.join('') === correctSequence.join('')) {
+        const win = window.open('about:blank', '_blank');
+        win.location.href = 'https://www.google.com';
+        sequence = []; // reset after success
     }
 }
+
+document.getElementById('btn1').addEventListener('click', () => checkSequence('1'));
+document.getElementById('btn2').addEventListener('click', () => checkSequence('2'));
+document.getElementById('btn3').addEventListener('click', () => checkSequence('3'));
+document.getElementById('btn4').addEventListener('click', () => checkSequence('4'));
